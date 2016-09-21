@@ -1,1 +1,1 @@
-# JavaScript-scratch
+# code-scratch
