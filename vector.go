@@ -25,7 +25,7 @@ func Variance(x []float64) float64 {
 
 	ss := 0.0
 	for _, v := range x {
-		ss += math.Pow(v-m, 2.0)
+		ss += math.Pow(v - m, 2.0)
 	}
 
 	return ss / (n - 1)
@@ -70,7 +70,7 @@ func Norm(x []float64, pow float64) float64 {
 		s += math.Pow(xval, pow)
 	}
 
-	return math.Pow(s, 1/pow)
+	return math.Pow(s, 1 / pow)
 }
 
 func Cosine(x, y []float64) (float64, error) {
@@ -85,7 +85,7 @@ func Cosine(x, y []float64) (float64, error) {
 	return d / (xnorm * ynorm), nil
 }
 
-func Cor(x, y []float64) (float64, error) {
+func Correlation(x, y []float64) (float64, error) {
 	n := float64(len(x))
 	xy, err := Product(x, y)
 	if err != nil {
@@ -98,6 +98,6 @@ func Cor(x, y []float64) (float64, error) {
 	mx := Mean(x)
 	my := Mean(y)
 
-	r := (Sum(xy) - n*mx*my) / ((n - 1) * sx * sy)
+	r := (Sum(xy) - n * mx * my) / ((n - 1) * sx * sy)
 	return r, nil
 }
